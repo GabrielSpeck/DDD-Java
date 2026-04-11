@@ -7,27 +7,29 @@ import java.util.UUID;
 public class Cliente {
     private String nome;
     private String id;
+    private String cpf;
     private String telefone;
-    private String cnh;
-
+    private CNH cnh;
     // ------------------------------
     // Construtores com Validações
     // ------------------------------
 
-    public Cliente(String nome, String id, String telefone, String cnh) {
+    public Cliente(String nome, String cpf, String telefone, CNH cnh) {
         this.nome = nome;
-        this.id = java.util.UUID.randomUUID().toString();
+        this.id = UUID.randomUUID().toString();//não precisa do java.util pq a gente ja deu import (linha 2)
+        this.cpf = cpf;
         this.telefone = telefone;
         this.cnh = cnh;
 
-        System.out.println("Parabéns, o Cliente: " + cliente + " foi cadastrado com sucesso!")
+        System.out.println("Parabéns, o Cliente: " + nome + " foi cadastrado com sucesso!");
     }
 
     // ------------------------------
     // GETTERS
     // ------------------------------
-    public String getNome(){return nome;}
-    public String getId(){return id;}
-    public String getTelefone(){return telefone;}
-    public String getCnh(){return cnh;}
+    public String getNome() {return nome;}
+    public String getId() {return id;}
+    public String getTelefone() {return telefone;}
+    public String getCpf() {return cpf;}
+    public boolean temCnhValida() {return cnh.estaValida();}
 }

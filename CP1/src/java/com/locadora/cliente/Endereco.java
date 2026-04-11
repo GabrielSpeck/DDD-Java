@@ -33,7 +33,7 @@ public class Endereco {
     // ------------------------------
     // Mostrar Informações.
     // ------------------------------
-    public class retornarEndereco(){
-        return rua + ", " + numero + "," + bairro + ", " + cidade + "- CEP: " + cep
+    public String retornarEndereco() {
+        return rua + ", " + numero + ", " + bairro + ", " + cidade + " - CEP: " + cep;
     }
 }
